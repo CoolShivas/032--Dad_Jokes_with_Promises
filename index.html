@@ -74,11 +74,24 @@
       //////-----------------------------------------------------------------------------------------------////////////
       //////-----------------------------------------------------------------------------------------------////////////
 
+      // //======// // Starting of defining the function on btn invoke. // //======// //
+
+      const handlerOnFetchDataBtn = (event) => {
+        console.log(event.target); // Getting the event on clicking the btn;
+      };
+      // //======// // Ending of defining the function on btn invoke. // //======// //
+
+      //////-----------------------------------------------------------------------------------------------////////////
+      //////-----------------------------------------------------------------------------------------------////////////
+
       // //======// // Starting of firing the event listener on button click. // //======// //
 
-      accFetchJokesBtn.addEventListener("click", (event) => {
-        console.log(event.target); // Getting the event on clicking the btn;
-      });
+      //   accFetchJokesBtn.addEventListener("click", (event) => {
+      //     console.log(event.target); // Getting the event on clicking the btn;
+      //   });
+
+      // // // Invocation of handlerOnFetchDataBtn() on btn click;
+      accFetchJokesBtn.addEventListener("click", handlerOnFetchDataBtn);
 
       // //======// // Ending of firing the event listener on button click. // //======// //
 
