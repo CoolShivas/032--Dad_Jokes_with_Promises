@@ -49,17 +49,23 @@ const apiUrl = "https://official-joke-api.appspot.com/random_joke";
 
 // // // Use of Async and Await instead of .then and .catch;
 const handlerOnFetchDataBtn = async () => {
-  const response = await fetch(apiUrl, {
-    headers: {
-      Accept: "application/json",
-    },
-  });
+  try {
+    const response = await fetch(apiUrl, {
+      headers: {
+        Accept: "application/json",
+      },
+    });
 
-  const data = await response.json();
-  console.log(data); // Getting Response with ok:true, status:200;
+    const data = await response.json();
+    console.log(data); // Getting Response with ok:true, status:200;
 
-  accApiBody.innerHTML = data.setup;
-  document.querySelector(".api_punch").innerHTML = data.punchline;
+    accApiBody.innerHTML = data.setup;
+    document.querySelector(".api_punch").innerHTML = data.punchline;
+  } catch (error) {
+    console.log(error);
+    accApiBody.innerHTML = `Something went wrong!`;
+    document.querySelector(".api_punch").innerHTML = `Something went wrong!`;
+  }
 };
 // //======// // Ending of defining the function on btn invoke. // //======// //
 
