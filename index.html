@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GetJoke</title>
+    <link rel="stylesheet" href="index.css">
     <style>
       * {
         margin: 0;
@@ -53,15 +54,23 @@
         color: red;
         cursor: pointer;
       }
+
+      .api_body,
+      .api_punch{
+        color: red;
+        font-size: large;
+      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Welcome to Dad Jokes!</h1>
-      <section class="api_body"></section>
-      <section class="api_punch"></section>
-      <button id="fetch_Jokes">Get Another Joke</button>
-    </div>
+    <center>
+      <div class="container">
+        <h1>Welcome to Dad Jokes!</h1>
+        <section class="api_body"></section>
+        <section class="api_punch"></section>
+        <button id="fetch_Jokes">Get Another Joke</button>
+      </div>
+    </center>
     <script>
       // //======// // Starting of accessing the reference of id's and classess. // //======// //
 
