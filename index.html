@@ -74,10 +74,29 @@
       //////-----------------------------------------------------------------------------------------------////////////
       //////-----------------------------------------------------------------------------------------------////////////
 
+      // //======// // Starting of defining the api link. // //======// //
+
+      const apiUrl = "https://official-joke-api.appspot.com/random_joke";
+
+      // //======// // Ending of defining the api link. // //======// //
+
+      //////-----------------------------------------------------------------------------------------------////////////
+      //////-----------------------------------------------------------------------------------------------////////////
+
       // //======// // Starting of defining the function on btn invoke. // //======// //
 
       const handlerOnFetchDataBtn = (event) => {
         console.log(event.target); // Getting the event on clicking the btn;
+
+        const response = fetch(apiUrl)
+          .then((res) => {
+            console.log(res);  // Getting Response with ok:true, status:200;
+            // apiBody.innerHTML = res; // Getting on display [object Response];
+            // // // Therefore, we are getting the raw data only;
+          })
+          .catch((err) => {
+            console.log(err); // If api doesn't response with ok:true, and status:400 i.e, failed;
+          });
       };
       // //======// // Ending of defining the function on btn invoke. // //======// //
 
