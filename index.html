@@ -65,11 +65,25 @@
       // //======// // Starting of accessing the reference of id's and classess. // //======// //
 
       const accApiBody = document.querySelector(".api_body");
-      console.log(accApiBody); // Getting section tab on browser console;
+      //   console.log(accApiBody); // Getting section tab on browser console;
       const accFetchJokesBtn = document.getElementById("fetch_Jokes");
-      console.log(accFetchJokesBtn); // Getting btn tab on browser console;
+      //   console.log(accFetchJokesBtn); // Getting btn tab on browser console;
 
       // //======// // Ending of accessing the reference of id's and classess. // //======// //
+
+      //////-----------------------------------------------------------------------------------------------////////////
+      //////-----------------------------------------------------------------------------------------------////////////
+
+      // //======// // Starting of firing the event listener on button click. // //======// //
+
+      accFetchJokesBtn.addEventListener("click", (event) => {
+        console.log(event.target); // Getting the event on clicking the btn;
+      });
+
+      // //======// // Ending of firing the event listener on button click. // //======// //
+
+      //////-----------------------------------------------------------------------------------------------////////////
+      //////-----------------------------------------------------------------------------------------------////////////
     </script>
   </body>
 </html>
