@@ -21,30 +21,45 @@ const apiUrl = "https://official-joke-api.appspot.com/random_joke";
 
 // //======// // Starting of defining the function on btn invoke. // //======// //
 
-const handlerOnFetchDataBtn = (event) => {
-  // console.log(event.target); // Getting the event on clicking the btn;
+// const handlerOnFetchDataBtn = (event) => {
+//   // console.log(event.target); // Getting the event on clicking the btn;
 
-  const response = fetch(apiUrl, {
+//   const response = fetch(apiUrl, {
+//     headers: {
+//       Accept: "application/json",
+//     },
+//   })
+//     .then((res) => {
+//       console.log(res); // Getting Response with ok:true, status:200;
+//       // apiBody.innerHTML = res; // Getting on display [object Response];
+//       // // // Therefore, we are getting the raw data only;
+
+//       // accApiBody.innerHTML = res; // Getting response on display as [object Response]; So, we have to use header with apiURL;
+
+//       return res.json(); // Converting the res data to json format;
+//     })
+//     .then((data) => {
+//       accApiBody.innerHTML = data.setup;
+//       document.querySelector(".api_punch").innerHTML = data.punchline;
+//     })
+//     .catch((err) => {
+//       console.log(err); // If api doesn't response with ok:true, and status:400 i.e, failed;
+//     });
+// };
+
+// // // Use of Async and Await instead of .then and .catch;
+const handlerOnFetchDataBtn = async () => {
+  const response = await fetch(apiUrl, {
     headers: {
       Accept: "application/json",
     },
-  })
-    .then((res) => {
-      console.log(res); // Getting Response with ok:true, status:200;
-      // apiBody.innerHTML = res; // Getting on display [object Response];
-      // // // Therefore, we are getting the raw data only;
+  });
 
-      // accApiBody.innerHTML = res; // Getting response on display as [object Response]; So, we have to use header with apiURL;
+  const data = await response.json();
+  console.log(data); // Getting Response with ok:true, status:200;
 
-      return res.json(); // Converting the res data to json format;
-    })
-    .then((data) => {
-      accApiBody.innerHTML = data.setup;
-      document.querySelector(".api_punch").innerHTML = data.punchline;
-    })
-    .catch((err) => {
-      console.log(err); // If api doesn't response with ok:true, and status:400 i.e, failed;
-    });
+  accApiBody.innerHTML = data.setup;
+  document.querySelector(".api_punch").innerHTML = data.punchline;
 };
 // //======// // Ending of defining the function on btn invoke. // //======// //
 
