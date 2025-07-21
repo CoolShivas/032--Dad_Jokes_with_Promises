@@ -22,7 +22,7 @@ const apiUrl = "https://official-joke-api.appspot.com/random_joke";
 // //======// // Starting of defining the function on btn invoke. // //======// //
 
 const handlerOnFetchDataBtn = (event) => {
-  console.log(event.target); // Getting the event on clicking the btn;
+  // console.log(event.target); // Getting the event on clicking the btn;
 
   const response = fetch(apiUrl, {
     headers: {
@@ -47,6 +47,9 @@ const handlerOnFetchDataBtn = (event) => {
     });
 };
 // //======// // Ending of defining the function on btn invoke. // //======// //
+
+// // // Calling the function for getting the default joke on page reload with click instead of blank or without joke;
+handlerOnFetchDataBtn();
 
 //////-----------------------------------------------------------------------------------------------////////////
 //////-----------------------------------------------------------------------------------------------////////////

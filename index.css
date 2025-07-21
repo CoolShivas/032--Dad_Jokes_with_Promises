@@ -7,10 +7,16 @@ html {
   color: #fff;
   font-size: 62.5%;
 }
+
 body {
-  font-family: "Urbanist", sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #1b1b1d;
 }
+
 
 h1 {
   font-size: 3.6rem;
@@ -38,7 +44,7 @@ button {
   &:hover {
     box-shadow: inset 0 0 0 0.2rem #f5ee62;
     background-color: transparent;
-    color: #f5ee62;
+    color: #e19510;
   }
 }
 
@@ -49,6 +55,19 @@ button {
 
 .api_body,
 .api_punch {
-  color: red;
-  font-size: large;
+  /* color: red;
+  font-size: large; */
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.container {
+  background-color: rgb(155, 220, 179);
+  text-align: center;
+  padding: 2.4rem 6.4rem;
+  border-radius: 0.6rem;
+  color: #000;
+  min-width: 32rem;
 }
