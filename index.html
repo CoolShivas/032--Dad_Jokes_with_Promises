@@ -59,6 +59,7 @@
     <div class="container">
       <h1>Welcome to Dad Jokes!</h1>
       <section class="api_body"></section>
+      <section class="api_punch"></section>
       <button id="fetch_Jokes">Get Another Joke</button>
     </div>
     <script>
@@ -88,11 +89,22 @@
       const handlerOnFetchDataBtn = (event) => {
         console.log(event.target); // Getting the event on clicking the btn;
 
-        const response = fetch(apiUrl)
+        const response = fetch(apiUrl, {
+          headers: {
+            Accept: "application/json",
+          },
+        })
           .then((res) => {
             console.log(res);  // Getting Response with ok:true, status:200;
             // apiBody.innerHTML = res; // Getting on display [object Response];
             // // // Therefore, we are getting the raw data only;
+            
+            // accApiBody.innerHTML = res; // Getting response on display as [object Response]; So, we have to use header with apiURL;
+
+            return res.json();  // Converting the res data to json format;
+          }).then((data) => {
+            accApiBody.innerHTML = data.setup;
+            document.querySelector(".api_punch").innerHTML = data.punchline;
           })
           .catch((err) => {
             console.log(err); // If api doesn't response with ok:true, and status:400 i.e, failed;
